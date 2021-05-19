@@ -1,0 +1,16 @@
+# -*- mode: yaml -*-
+
+- name: japanese
+  hosts: target
+  roles:
+    - name: install japanese environment
+      role: japanese
+
+- name: setup pc07
+  hosts: target
+  tasks:
+    - name: install ubuntu desktop -- this takes very long.
+      become: true
+      apt:
+        name: ubuntu-desktop
+        update_cache: yes

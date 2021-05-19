@@ -1,0 +1,15 @@
+# -*- mode: yaml -*-
+
+- name: install regolith
+  hosts: target
+  tasks:
+    - name: install regolith repository
+      become: true
+      apt_repository:
+        repo: ppa:regolith-linux/release
+
+    - name: install regolith
+      become: true
+      apt:
+        name: regolith-desktop-mobile
+        update_cache: true

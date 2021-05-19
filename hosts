@@ -1,0 +1,6 @@
+# -*- mode: yaml -*-
+
+target:
+  hosts:
+    pc07:
+      ansible_connection: local
